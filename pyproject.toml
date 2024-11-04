@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "aisee-mvp"
+version = "0.1.0"
+description = ""
+authors = ["Nik1t7n <20nik.nosov21@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.4"
+uvicorn = "^0.32.0"
+sqlalchemy = "^2.0.36"
+python-dotenv = "^1.0.1"
+alembic = "^1.13.3"
+asyncpg = "^0.30.0"
+psycopg2-binary = "^2.9.10"
+asyncio = "^3.4.3"
+greenlet = "^3.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
