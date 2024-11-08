@@ -2,9 +2,7 @@ from typing import Optional, List
 from pydantic import BaseModel
 from datetime import datetime
 
-from schemas.analysis_result import AnalysisResult
 from schemas.enums import VideoStatus
-from schemas.frame import Frame
 from schemas.user import UserResponse
 
 
@@ -18,11 +16,10 @@ class VideoCreate(VideoBase):
     user_id: int
 
 
-class Video(VideoBase):
+class VideoResponse(VideoBase):
     id: int
     user: UserResponse
-    frames: List[Frame] = []  # Список кадров
-    analysis_result: Optional[AnalysisResult] = None  # Один результат анализа
+    # frames: List[Frame] = []
 
     class Config:
         orm_mode = True

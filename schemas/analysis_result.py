@@ -5,7 +5,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 from schemas.enums import ResultType
-from schemas.video import Video
+from schemas.video import VideoResponse
 
 
 class AnalysisResultBase(BaseModel):
@@ -13,12 +13,14 @@ class AnalysisResultBase(BaseModel):
     data: dict  # Данные результата в формате JSON
     created_at: Optional[datetime]
 
+
 class AnalysisResultCreate(AnalysisResultBase):
     video_id: int
 
-class AnalysisResult(AnalysisResultBase):
+
+class AnalysisResultResponse(AnalysisResultBase):
     id: int
-    video: Video  # Ссылка на видео
+    video: VideoResponse  # Ссылка на видео
 
     class Config:
         orm_mode = True

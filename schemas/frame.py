@@ -3,7 +3,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from schemas.video import Video
+from schemas.video import VideoResponse
 
 
 class FrameBase(BaseModel):
@@ -16,9 +16,9 @@ class FrameCreate(FrameBase):
     video_id: int
 
 
-class Frame(FrameBase):
+class FrameResponse(FrameBase):
     id: int
-    video: Video  # Ссылка на видео
+    video: VideoResponse  # Ссылка на видео
 
     class Config:
         orm_mode = True
