@@ -5,7 +5,7 @@ from datetime import datetime
 from schemas.analysis_result import AnalysisResult
 from schemas.enums import VideoStatus
 from schemas.frame import Frame
-from schemas.user import User
+from schemas.user import UserResponse
 
 
 # Обновленный класс Video
@@ -20,7 +20,7 @@ class VideoCreate(VideoBase):
 
 class Video(VideoBase):
     id: int
-    user: User
+    user: UserResponse
     frames: List[Frame] = []  # Список кадров
     analysis_result: Optional[AnalysisResult] = None  # Один результат анализа
 

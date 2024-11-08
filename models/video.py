@@ -21,11 +21,11 @@ class Video(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
 
     # Связь многие-ко-одному: Каждое видео принадлежит одному пользователю
-    user = relationship("User", back_populates="videos")
+    # user = relationship("User", back_populates="video", lazy="dynamic")
 
     # Связь один-ко-многим: Одно видео может иметь много кадров
-    frames = relationship("Frame", back_populates="video")
+    frames = relationship("Frame", back_populates="video", lazy="dynamic")
 
     # Связь один-ко-одному: одно видео может иметь только один результат
-    analysis_results = relationship("AnalysisResult", back_populates="video")
+    analysis_results = relationship("AnalysisResult", back_populates="video", lazy="dynamic")
 

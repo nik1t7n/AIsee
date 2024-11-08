@@ -11,10 +11,15 @@ class UserBase(BaseModel):
 
 
 class UserCreate(UserBase):
-    hashed_password: str
+    password: str
 
 
-class User(UserBase):
+class UserUpdate(BaseModel):
+    company_name: Optional[str]
+    email: Optional[EmailStr]
+
+
+class UserResponse(UserBase):
     id: int
     created_at: datetime
     last_login: Optional[datetime]
